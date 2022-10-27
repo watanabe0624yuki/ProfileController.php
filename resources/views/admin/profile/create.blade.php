@@ -10,8 +10,7 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h2>profile新規作成</h2>
-                <form action="{{
-                route('admin.profile.create') }}" method="post" enctype="multipart/form-data">
+                <form action="{{route('admin.profile.create') }}" method="post" enctype="multipart/form-data">
                     @if (count($errors) > 0)
                     <ul>
                         @foreach($errors->all() as $e)
