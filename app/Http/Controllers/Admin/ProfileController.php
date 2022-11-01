@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 // 以下の1行を追記することで、News Modelが扱えるようになる
 use App\Models\Profile;
+use App\Models\ProfileHistory;
+use Carbon\Carbon;
 
 class ProfileController extends Controller
 {
@@ -83,6 +85,13 @@ class ProfileController extends Controller
 
         // 該当するデータを上書きして保存する
         $profile->fill($profile_form)->save();
+        
+        $history = new ProfileHistory();
+        $history->profile_id = $profile->id;
+        //Carbonを使って取得した現在時刻を、History Modelの edited_at として記録する。
+        $history->edited_at = Carbon::now();
+        $history->save();
+        
         return redirect('admin/profile');
     }
         
