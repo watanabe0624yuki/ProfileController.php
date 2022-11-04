@@ -39,7 +39,7 @@ Route::controller(ProfileController::class)->prefix('admin')->name('admin.')->gr
 });
 
 //Route::controller(AAAController::class)->group(function() {
-  //  Route::get('XXX', 'bbb');
+//Route::get('XXX', 'bbb');
 //});
 
 
