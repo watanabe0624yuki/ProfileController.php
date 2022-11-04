@@ -99,7 +99,7 @@ class NewsController extends Controller
         
         $history = new History();
         $history->news_id = $news->id;
-        $history->edited_at = Carbon::now();
+        $history->edited_at = Carbon::now();//Carbon::now()では現在時刻を取得
         $history->save();
 
         return redirect('admin/news');

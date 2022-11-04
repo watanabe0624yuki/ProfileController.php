@@ -19,6 +19,7 @@ class News extends Model
     // News Modelに関連付けを行う    
     public function histories()
     {
+        //newsテーブルに関連付いているhistoriesテーブルをすべて取得するというメソッド
         return $this->hasMany('App\Models\History');
     }
 }
